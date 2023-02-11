@@ -1,0 +1,46 @@
+{
+  "name": "@praburangki/praburangki.dev",
+  "engines": {
+    "node": ">= 18"
+  },
+  "scripts": {
+    "build": "pnpm --filter vinicunca build",
+    "build:full": "pnpm --filter vinicunca build:full",
+    "build:docs": "pnpm -C docs build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path .",
+    "commit": "git-cz",
+    "lint": "eslint --fix --ext .js,.ts,.tsx,.vue .",
+    "precommit": "lint-staged -c ./.husky/.lintstagedrc -q",
+    "prepare": "is-ci || husky install",
+    "test:ui": "pnpm --filter vinicunca cy:open"
+  },
+  "dependencies": {
+    "@vinicunca/js-utilities": "^2.6.2",
+    "@vueuse/core": "^9.5.0",
+    "nuxt": "3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@nuxt/content": "^2.2.2",
+    "@types/node": "^18.7.18",
+    "@vinicunca/eslint-config": "^1.5.0",
+    "commitizen": "^4.2.5",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.27.0",
+    "eslint-define-config": "^1.12.0",
+    "husky": "^8.0.1",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.0.3",
+    "vitest": "^0.25.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "scripts/cz-config.js"
+    }
+  }
+}

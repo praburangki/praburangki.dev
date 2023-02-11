@@ -1,0 +1,37 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "npm.packageManager": "pnpm",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "json",
+    "jsonc"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "json",
+    "jsonc"
+  ],
+  "files.associations": {
+    "*.css": "css"
+  },
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "todo-tree.tree.scanMode": "workspace only"
+}
