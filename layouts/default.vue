@@ -3,9 +3,5 @@
 </script>
 
 <template>
-  <VApp>
-    <VMain>
-      <NuxtPage />
-    </VMain>
-  </VApp>
+  <NuxtPage />
 </template>
