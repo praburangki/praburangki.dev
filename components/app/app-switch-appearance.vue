@@ -12,7 +12,7 @@ const toggleDark = useToggle(isDark);
       :aria-checked="isDark"
       @click="toggleDark()"
     >
-      <i class="i-ri-sun-line dark:i-ri-moon-line text-$c-text-2" />
+      <i class="i-ri-sun-line dark:i-ri-moon-line absolute top-[3px] left-[3px] text-xs text-$c-text-2" />
     </AppSwitch>
   </label>
 </template>
