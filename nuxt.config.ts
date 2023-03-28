@@ -13,7 +13,18 @@ export default defineNuxtConfig({
 
   modules: [
     '@unocss/nuxt',
+    '@nuxt/image-edge',
   ],
+
+  image: {
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/praburangki/image/upload/dev-site',
+      modifiers: {
+        quality: 'auto:best',
+        dpr: 'auto',
+      },
+    },
+  },
 
   sourcemap: {
     server: true,

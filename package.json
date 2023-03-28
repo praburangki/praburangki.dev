@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
+    "@nuxt/image-edge": "1.0.0-27991759.1a5eea1",
     "@types/node": "^18.15.3",
     "@unocss/nuxt": "^0.50.6",
     "@vinicunca/eslint-config": "^1.6.2",

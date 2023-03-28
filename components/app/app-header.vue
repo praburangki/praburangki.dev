@@ -11,6 +11,11 @@
             to="/"
             class="flex items-center w-full h-$nav-height font-semibold transition-opacity-250 hover:opacity-60"
           >
+            <NuxtImg
+              src="/profile"
+              provider="cloudinary"
+              class="h-6 rounded mr-2"
+            />
             praburangki
           </NuxtLink>
         </div>
