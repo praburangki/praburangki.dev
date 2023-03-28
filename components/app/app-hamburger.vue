@@ -27,7 +27,7 @@ defineEmits<{
 <style lang="postcss" scoped>
   .hamburger {
     .top, .middle, .bottom {
-      @apply absolute w-4 bg-light-1;
+      @apply absolute w-4 bg-$c-text-1;
       height: 2px;
       transition: top .25s, background-color .5s, transform .25s;
     }
@@ -47,7 +47,7 @@ defineEmits<{
 
       &.active {
         .top, .middle, .bottom {
-          @apply bg-light-2;
+          @apply bg-$c-text-2;
           transition: top .25s, background-color .25s, transform .25s;
         }
       }

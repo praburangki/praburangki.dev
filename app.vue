@@ -7,7 +7,7 @@ useHead({
     return titleChunk ? `${titleChunk} | ${title}` : title;
   },
   bodyAttrs: {
-    class: 'antialiased font-sans text-light-1 dark:(text-gray-200 bg-black) bg-white [--scroll-mt:10rem] lg:[--scroll-mt:7rem]',
+    class: 'antialiased font-sans [--scroll-mt:10rem] lg:[--scroll-mt:7rem]',
   },
 });
 </script>

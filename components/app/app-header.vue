@@ -26,6 +26,8 @@ const { isMenuOpen, toggleMenu } = useNav();
         </div>
       </div>
     </div>
+
+    <AppNavMenu :open="isMenuOpen" />
   </header>
 </template>
 
