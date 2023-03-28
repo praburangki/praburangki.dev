@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/ri': ^1.1.5
   '@mdi/font': ^7.2.96
   '@nuxt/content': ^2.5.2
   '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
@@ -28,6 +29,7 @@ dependencies:
   unocss: 0.50.6
 
 devDependencies:
+  '@iconify-json/ri': 1.1.5
   '@nuxt/content': 2.5.2
   '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
   '@types/body-scroll-lock': 3.1.0
@@ -815,6 +817,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+
+  /@iconify-json/ri/1.1.5:
+    resolution: {integrity: sha512-OrxKcKFHanTSPmU5esvSn5YfpNgjwJJ+6rkK1I1pIRCPXfuvmlTJGUjf+L5ZQHUiMWLQz+M2bqXx8iBUtW35Gg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}

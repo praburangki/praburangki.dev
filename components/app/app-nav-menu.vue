@@ -28,6 +28,8 @@ function unlockBodyScroll() {
           <p class="font-medium text-$c-text-2 text-xs">
             Appearance
           </p>
+
+          <AppSwitchAppearance />
         </div>
       </div>
     </div>
