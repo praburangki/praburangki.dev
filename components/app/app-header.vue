@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-
+const { isMenuOpen, toggleMenu } = useNav();
 </script>
 
 <template>
@@ -16,8 +16,13 @@
               provider="cloudinary"
               class="h-6 rounded mr-2"
             />
+
             praburangki
           </NuxtLink>
+        </div>
+
+        <div class="grow-1 flex justify-end items-center h-[calc(var(--nav-height)-1px)]">
+          <AppHamburger :active="isMenuOpen" @click="toggleMenu" />
         </div>
       </div>
     </div>
