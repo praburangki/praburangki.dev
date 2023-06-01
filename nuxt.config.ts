@@ -1,5 +1,13 @@
 export default defineNuxtConfig({
-  ssr: false,
+  components: {
+    dirs: [
+      {
+        path: '~/app/layouts/components',
+        extensions: ['.vue'],
+        prefix: 'layout',
+      },
+    ],
+  },
 
   devServer: {
     port: 3001,
@@ -7,11 +15,12 @@ export default defineNuxtConfig({
 
   css: [
     '@unocss/reset/tailwind.css',
-    '@mdi/font/css/materialdesignicons.css',
     '~~/designs/index.css',
   ],
 
   modules: [
+    '@pinia/nuxt',
+    '@nuxt/content',
     '@unocss/nuxt',
     '@nuxt/image-edge',
   ],
@@ -25,14 +34,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  sourcemap: {
-    server: true,
-    client: false,
-  },
-
-  plugins: [
-  ],
 
   postcss: {
     plugins: {

@@ -1,15 +1,7 @@
 <script lang="ts" setup>
-const title = 'praburangki';
+import { defineHead } from './app/head/define-head';
 
-useHead({
-  title,
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | ${title}` : title;
-  },
-  bodyAttrs: {
-    class: 'antialiased font-sans [--scroll-mt:10rem] lg:[--scroll-mt:7rem]',
-  },
-});
+defineHead();
 </script>
 
 <template>

@@ -6,7 +6,31 @@ import {
   transformerVariantGroup,
 } from 'unocss';
 
+import { presetTypography } from './designs/preset-typography';
+
 export default defineConfig({
+  extendTheme: (theme: any) => {
+    theme.fontFamily.sans = `Inter var,${theme.fontFamily.sans}`;
+    theme.fontFamily.mono = `Fira Code VF,${theme.fontFamily.mono}`;
+  },
+
+  layers: {
+    vinicunca: 1,
+  },
+
+  theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+      },
+    },
+
+    maxWidth: {
+      '8xl': '90rem',
+    },
+  },
+
   presets: [
     presetUno(),
     presetIcons({
@@ -14,6 +38,7 @@ export default defineConfig({
         display: 'inline-block',
       },
     }),
+    presetTypography(),
   ],
 
   transformers: [
@@ -21,17 +46,13 @@ export default defineConfig({
     transformerDirectives(),
   ],
 
-  theme: {
-    fontFamily: {
-      sans: 'Inter var, sans-serif',
+  variants: [
+    (matcher) => {
+      if (matcher.startsWith('vin:')) {
+        return {
+          matcher: matcher.replace('vin:', 'uno-layer-vinicunca:'),
+        };
+      }
     },
-
-    boxShadow: {
-      1: '0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
-      2: '0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07)',
-      3: '0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08)',
-      4: '0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12)',
-      5: '0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16)',
-    },
-  },
+  ],
 });
