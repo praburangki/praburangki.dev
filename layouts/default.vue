@@ -7,5 +7,7 @@
 
   <LayoutHeader />
 
+  <LayoutDrawer />
+
   <NuxtPage />
 </template>

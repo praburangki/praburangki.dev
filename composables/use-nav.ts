@@ -1,5 +1,5 @@
 export function useNav() {
-  const isMenuOpen = ref(false);
+  const isMenuOpen = useState(() => false);
 
   function openMenu() {
     isMenuOpen.value = true;
