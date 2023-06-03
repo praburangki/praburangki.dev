@@ -3,6 +3,9 @@
 </script>
 
 <template>
+  <LayoutBgImage />
+
   <LayoutHeader />
+
   <NuxtPage />
 </template>

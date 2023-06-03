@@ -12,7 +12,7 @@ defineEmits<{
   <button
     aria-label="mobile navigation"
     :aria-expanded="active"
-    class="hamburger group h-$nav-height w-12 flex items-center justify-center"
+    class="group hamburger h-$nav-height w-12 flex items-center justify-center"
     :class="{ active }"
     @click="$emit('click')"
   >
