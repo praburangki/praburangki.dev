@@ -12,11 +12,11 @@ function onClickToggle(event: MouseEvent) {
   const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
   // @ts-expect-error: Transition API
-  const transition = document.startViewTransition(() => {
+  const viewTransition = document.startViewTransition(() => {
     toggleColorMode();
   });
 
-  transition.ready.then(() => {
+  viewTransition.ready.then(() => {
     const isDarkMode = colorMode.value === 'dark';
     const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
     document.documentElement.animate(

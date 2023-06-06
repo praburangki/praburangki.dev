@@ -1,42 +1,37 @@
 <script lang="ts" setup>
+import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 const { isMenuOpen, toggleMenu } = useNav();
 
-watch(isMenuOpen, (val) => {
-  const rootEl = document.documentElement;
+const drawer = ref<HTMLElement | null>(null);
 
-  if (val) {
-    rootEl.classList.add('overflow-hidden');
-  } else {
-    rootEl.classList.remove('overflow-hidden');
-  }
-});
+function lockBodyScroll() {
+  disableBodyScroll(drawer.value!, { reserveScrollBarGap: true });
+}
+
+function unlockBodyScroll() {
+  clearAllBodyScrollLocks();
+}
 </script>
 
 <template>
-  <nav
-    class="[-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 right-0 top-0 z-50 h-full max-w-full w-[300px] flex flex-col bg-white duration-300 transition-property-[box-shadow,transform,visibility,width,height,left,right,top,bottom] will-change-transform elevation-16 dark:(bg-slate-900)"
-    :class="{
-      'translate-x-0': isMenuOpen,
-      'translate-x-[110%]': !isMenuOpen,
-    }"
-  >
-    <div class="h-full flex flex-col px-4 py-6">
-      <ClientOnly>
-        <ToggleDarkBtn />
-      </ClientOnly>
-    </div>
-  </nav>
-
   <Transition
-    enter-active-class="transition-opacity-300"
-    leave-active-class="transition-opacity-300"
-    enter-from-class="opacity-0"
-    leave-to-class="opacity-0"
+    enter-active-class="transition-opacity-250 all-[.drawer-container]:transition-transform-250"
+    leave-active-class="transition-opacity-250 all-[.drawer-container]:transition-transform-250"
+    enter-from-class="opacity-0 all-[.drawer-container]:-translate-y-3"
+    leave-to-class="opacity-0 all-[.drawer-container]:-translate-y-3"
+    @enter="lockBodyScroll"
+    @after-leave="unlockBodyScroll"
   >
-    <div
+    <nav
       v-if="isMenuOpen"
-      class="absolute inset-0 z-49 bg-black/20"
-      @click="toggleMenu"
-    />
+      ref="drawer"
+      class="drawer [-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 left-0 right-0 top-14 w-full bg-white dark:(bg-slate-900)"
+    >
+      <div class="drawer-container h-full flex flex-col px-4 py-6">
+        <ClientOnly>
+          <ToggleDarkBtn />
+        </ClientOnly>
+      </div>
+    </nav>
   </Transition>
 </template>

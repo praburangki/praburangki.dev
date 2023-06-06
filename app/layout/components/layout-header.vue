@@ -16,14 +16,14 @@ const { isMenuOpen, toggleMenu } = useNav();
           <LayoutLogo class="h-5 w-auto" />
         </NuxtLink>
 
-        <div class="relative">
-          <LayoutHamburger
-            class="ml-auto md:hidden"
-            :active="isMenuOpen"
-            @click="toggleMenu"
-          />
-        </div>
+        <LayoutHamburger
+          class="ml-auto md:hidden"
+          :active="isMenuOpen"
+          @click="toggleMenu"
+        />
       </div>
     </div>
   </div>
+
+  <LayoutDrawer />
 </template>
