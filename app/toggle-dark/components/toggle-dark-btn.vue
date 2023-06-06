@@ -1,7 +1,38 @@
 <script lang="ts" setup>
 const colorMode = useColorMode();
 
-function toggle() {
+function onClickToggle(event: MouseEvent) {
+  // @ts-expect-error: Transition API
+  if (!document.startViewTransition) {
+    toggleColorMode();
+    return;
+  }
+  const x = event.clientX;
+  const y = event.clientY;
+  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+
+  // @ts-expect-error: Transition API
+  const transition = document.startViewTransition(() => {
+    toggleColorMode();
+  });
+
+  transition.ready.then(() => {
+    const isDarkMode = colorMode.value === 'dark';
+    const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
+    document.documentElement.animate(
+      {
+        clipPath: isDarkMode ? clipPath : [...clipPath].reverse(),
+      },
+      {
+        duration: 300,
+        easing: 'ease-in',
+        pseudoElement: isDarkMode ? '::view-transition-new(root)' : '::view-transition-old(root)',
+      },
+    );
+  });
+}
+
+function toggleColorMode() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
 }
 </script>
@@ -11,7 +42,7 @@ function toggle() {
     class="btn-toggle relative isolate z-10 aspect-ratio-8/3 w-$width transform-gpu overflow-hidden border-0 rounded-full outline-transparent duration-500 ease-$slide-ease transition-property-[background] will-change-transform after:(absolute inset-0 rounded-full content-empty)"
     :aria-pressed="colorMode.value === 'dark'"
     title="Toggle Dark Mode"
-    @click="toggle"
+    @click="onClickToggle"
   >
     <span class="btn-toggle__content absolute inset-0 block overflow-hidden rounded-full">
       <ToggleDarkBackdrop>
@@ -208,5 +239,25 @@ function toggle() {
   50% {
     transform: scale(0);
   }
+}
+</style>
+
+<style>
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 9999;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}
+.dark::view-transition-old(root) {
+  z-index: 1;
+}
+.dark::view-transition-new(root) {
+  z-index: 9999;
 }
 </style>
