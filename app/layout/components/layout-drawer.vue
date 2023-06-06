@@ -14,13 +14,17 @@ watch(isMenuOpen, (val) => {
 
 <template>
   <nav
-    class="elevation-16 [-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 right-0 top-0 z-50 h-full max-w-full w-[300px] flex flex-col bg-white duration-200 transition-property-[box-shadow,transform,visibility,width,height,left,right,top,bottom] will-change-transform dark:(bg-slate-900)"
+    class="[-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 right-0 top-0 z-50 h-full max-w-full w-[300px] flex flex-col bg-white duration-300 transition-property-[box-shadow,transform,visibility,width,height,left,right,top,bottom] will-change-transform elevation-16 dark:(bg-slate-900)"
     :class="{
       'translate-x-0': isMenuOpen,
       'translate-x-[110%]': !isMenuOpen,
     }"
   >
-    kekekeke
+    <div class="h-full flex flex-col px-4 py-6">
+      <ClientOnly>
+        <ToggleDarkBtn />
+      </ClientOnly>
+    </div>
   </nav>
 
   <Transition

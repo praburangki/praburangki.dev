@@ -30,6 +30,10 @@ export default defineConfig({
     maxWidth: {
       '8xl': '90rem',
     },
+
+    borderRadius: {
+      half: '50%',
+    },
   },
 
   presets: [
@@ -59,5 +63,11 @@ export default defineConfig({
 
   rules: [
     elevationRule,
+    [
+      'toggle-dark-backdrop',
+      {
+        translate: '0 calc(var(--dark, 0) * (100% - (3 / 8 * var(--width))))',
+      },
+    ],
   ],
 });

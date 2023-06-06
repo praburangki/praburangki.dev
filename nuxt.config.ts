@@ -2,9 +2,19 @@ export default defineNuxtConfig({
   components: {
     dirs: [
       {
-        path: '~/app/layouts/components',
+        path: '~/app/layout/components',
         extensions: ['.vue'],
         prefix: 'layout',
+      },
+      {
+        path: '~/app/site/components',
+        extensions: ['.vue'],
+        prefix: 'site',
+      },
+      {
+        path: '~/app/toggle-dark/components',
+        extensions: ['.vue'],
+        prefix: 'toggle-dark',
       },
     ],
   },
@@ -23,7 +33,12 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unocss/nuxt',
     '@nuxt/image-edge',
+    '@nuxtjs/color-mode',
   ],
+
+  colorMode: {
+    classSuffix: '',
+  },
 
   image: {
     cloudinary: {
