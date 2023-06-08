@@ -4,7 +4,11 @@ const { isMenuOpen, toggleMenu } = useNav();
 
 <template>
   <div
-    class="sticky top-0 z-40 w-full flex-none border-b border-zinc-900/7.5 bg-white/50 backdrop-blur-sm transition-colors duration-500 lg:(z-50) dark:(border-white/7.5 backdrop-blur)"
+    class="border-surface-invert/7.5 dark:border-surface/7.5 sticky top-0 z-30 w-full flex-none border-b transition-colors duration-500 dark:(backdrop-blur)"
+    :class="{
+      'bg-surface dark:bg-slate-800': isMenuOpen,
+      'bg-surface/50 dark:bg-surface-invert/20': !isMenuOpen,
+    }"
   >
     <div class="mx-auto max-w-8xl">
       <div class="relative h-14 flex items-center justify-between p-4 lg:(px-8)">

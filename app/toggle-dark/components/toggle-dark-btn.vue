@@ -1,14 +1,26 @@
 <script lang="ts" setup>
 const colorMode = useColorMode();
 
+const toggleRef = ref<HTMLElement>();
+
 function onClickToggle(event: MouseEvent) {
   // @ts-expect-error: Transition API
   if (!document.startViewTransition) {
     toggleColorMode();
     return;
   }
-  const x = event.clientX;
-  const y = event.clientY;
+
+  let x: number;
+  let y: number;
+
+  if (event.detail === 0) {
+    const rect = toggleRef.value!.getBoundingClientRect();
+    x = rect.left + rect.width / 2;
+    y = rect.top + rect.height / 2;
+  } else {
+    x = event.clientX;
+    y = event.clientY;
+  }
   const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
   // @ts-expect-error: Transition API
@@ -24,7 +36,7 @@ function onClickToggle(event: MouseEvent) {
         clipPath: isDarkMode ? clipPath : [...clipPath].reverse(),
       },
       {
-        duration: 300,
+        duration: 400,
         easing: 'ease-in',
         pseudoElement: isDarkMode ? '::view-transition-new(root)' : '::view-transition-old(root)',
       },
@@ -63,7 +75,10 @@ function toggleColorMode() {
         </g>
       </ToggleDarkBackdrop>
 
-      <span class="toggle__indicator-wrapper absolute inset-0 duration-500 ease-$slide-ease transition-property-[translate]">
+      <span
+        ref="toggleRef"
+        class="toggle__indicator-wrapper absolute inset-0 duration-500 ease-$slide-ease transition-property-[translate]"
+      >
         <span class="grid aspect-ratio-1 h-full place-items-center rounded-0 p-[3%]">
           <span class="toggle__star relative aspect-ratio-1 h-full rounded-half duration-500 ease-$slide-ease transition-property-[translate] after:(absolute inset-0 block rounded-half blur-4 content-empty -z-1) before:(absolute left-[50%] top-[50%] aspect-ratio-1 rounded-half duration-500 ease-$slide-ease transition-property-[translate] content-empty -z-1)">
             <span class="sun absolute inset-0 overflow-hidden rounded-half">
@@ -102,7 +117,7 @@ function toggleColorMode() {
 .btn-toggle {
   --slide-ease: cubic-bezier(.4,-0.3,.6,1.3);
   --speed: 0.5s;
-  --width: clamp(200px, 45vmin, 500px);
+  --width: 100px;
 
   &[aria-pressed=true] {
     --dark: 1;

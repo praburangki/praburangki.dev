@@ -34,6 +34,13 @@ export default defineConfig({
     borderRadius: {
       half: '50%',
     },
+
+    colors: {
+      surface: {
+        DEFAULT: '#fff',
+        invert: '#0f172a',
+      },
+    },
   },
 
   presets: [

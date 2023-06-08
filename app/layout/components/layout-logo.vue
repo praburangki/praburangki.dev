@@ -4,7 +4,7 @@
 
 <template>
   <svg
-    class="text-slate-900 dark:text-white"
+    class="text-surface-invert dark:text-surface"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 225 39"

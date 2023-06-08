@@ -20,7 +20,7 @@ export function defineHead() {
     },
 
     bodyAttrs: {
-      class: 'antialiased bg-white text-slate-500 dark:(bg-slate-900 text-slate-400) overflow-x-hidden font-sans [--scroll-mt:9.875rem] lg:[--scroll-mt:4.75rem]',
+      class: 'antialiased bg-surface text-slate-500 dark:(bg-surface-invert text-slate-400) overflow-x-hidden font-sans [--scroll-mt:9.875rem] lg:[--scroll-mt:4.75rem]',
     },
 
     meta: [

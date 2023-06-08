@@ -5,7 +5,8 @@
 <template>
   <div class="absolute inset-0 mx-0 max-w-none overflow-hidden -z-10">
     <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]">
-      <div class="[mask-image:radial-gradient(farthest-side_at_top,white,transparent)] absolute inset-0 from-[#36b49f] to-[#DBFF75] bg-gradient-to-r opacity-40 dark:from-[#36b49f]/30 dark:to-[#DBFF75]/30 dark:opacity-100">
+      <!-- <div class="[mask-image:radial-gradient(farthest-side_at_top,white,transparent)] absolute inset-0 from-[#36b49f] to-[#DBFF75] bg-gradient-to-r opacity-40 dark:from-[#36b49f]/30 dark:to-[#DBFF75]/30 dark:opacity-100"> -->
+      <div class="[mask-image:radial-gradient(farthest-side_at_top,white,transparent)] absolute inset-0 from-[#0ea5e9] to-[#f3f2f7] bg-gradient-to-r opacity-40 dark:(from-[#0ea5e9]/30 to-[#f3f2f7]/30 opacity-100)">
         <svg
           aria-hidden="true"
           class="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/50 mix-blend-overlay dark:fill-white/2.5 dark:stroke-white/5"
