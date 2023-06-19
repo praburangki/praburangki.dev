@@ -37,7 +37,7 @@ export default defineConfig({
 
     colors: {
       surface: {
-        DEFAULT: '#fff',
+        DEFAULT: '#fcfcfc',
         invert: '#0f172a',
       },
     },
@@ -47,7 +47,8 @@ export default defineConfig({
     presetUno(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
+        'vertical-align': 'middle',
       },
     }),
     presetTypography(),

@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/content',
     '@unocss/nuxt',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxtjs/color-mode',
   ],
 
