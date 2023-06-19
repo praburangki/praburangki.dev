@@ -4,7 +4,7 @@ const { isMenuOpen, toggleMenu } = useNav();
 
 <template>
   <div
-    class="border-surface-invert/7.5 dark:border-surface/7.5 sticky top-0 z-30 w-full flex-none border-b transition-colors duration-500 dark:(backdrop-blur)"
+    class="sticky top-0 z-30 w-full flex-none border-b border-surface-invert/7.5 backdrop-blur transition-colors duration-500 dark:(border-surface/7.5)"
     :class="{
       'bg-surface dark:bg-slate-800': isMenuOpen,
       'bg-surface/50 dark:bg-surface-invert/20': !isMenuOpen,

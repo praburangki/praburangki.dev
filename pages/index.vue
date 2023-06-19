@@ -12,7 +12,6 @@ const toolIcons = [
   },
   {
     name: 'UnoCSS',
-    // class: 'i-logos:unocss',
     class: 'i-vscode-icons:file-type-unocss',
     link: 'https://unocss.dev/',
   },
@@ -25,6 +24,24 @@ const toolIcons = [
     name: 'Cypress',
     class: 'i-logos:cypress-icon',
     link: 'https://www.cypress.io/',
+  },
+];
+
+const socialIcons = [
+  {
+    name: 'Github',
+    class: 'i-logos:github-icon dark:invert',
+    link: 'https://github.com/praburangki',
+  },
+  {
+    name: 'LinkedIn',
+    class: 'i-logos:linkedin-icon',
+    link: 'https://www.linkedin.com/in/praburangki/',
+  },
+  {
+    name: 'Twitter',
+    class: 'i-logos:twitter',
+    link: 'https://twitter.com/praburangki',
   },
 ];
 </script>
@@ -83,6 +100,7 @@ const toolIcons = [
         :key="icon.link"
         :href="icon.link"
         class="group"
+        :title="icon.name"
       >
         <i
           :class="icon.class"
@@ -94,8 +112,27 @@ const toolIcons = [
   </section>
 
   <footer class="mt-8 py-8 md:mt-20">
-    <div class="flex justify-between container">
-      <span>&copy; {{ new Date().getFullYear() }} praburangki</span>
+    <div class="container">
+      <div class="flex items-center justify-between border-t-1 border-slate-200 pt-5 dark:border-slate-700">
+        <span>&copy; {{ new Date().getFullYear() }} praburangki</span>
+
+        <ul class="flex gap-6">
+          <li
+            v-for="icon in socialIcons"
+            :key="icon.link"
+            class="text-2xl opacity-70 transition-opacity hover:opacity-100"
+          >
+            <a
+              :href="icon.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              :title="icon.name"
+            >
+              <i :class="icon.class" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 </template>
