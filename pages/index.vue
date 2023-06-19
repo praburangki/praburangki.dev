@@ -1,5 +1,32 @@
 <script lang="ts" setup>
-
+const toolIcons = [
+  {
+    name: 'Nuxt',
+    class: 'i-logos:nuxt-icon',
+    link: 'https://nuxt.com/',
+  },
+  {
+    name: 'Typescript',
+    class: 'i-logos:typescript-icon',
+    link: 'https://www.typescriptlang.org/',
+  },
+  {
+    name: 'UnoCSS',
+    // class: 'i-logos:unocss',
+    class: 'i-vscode-icons:file-type-unocss',
+    link: 'https://unocss.dev/',
+  },
+  {
+    name: 'Figma',
+    class: 'i-logos:figma',
+    link: 'https://www.figma.com/',
+  },
+  {
+    name: 'Cypress',
+    class: 'i-logos:cypress-icon',
+    link: 'https://www.cypress.io/',
+  },
+];
 </script>
 
 <template>
@@ -15,7 +42,7 @@
 
     <div class="mx-auto max-w-7xl px-6 pb-10 lg:px-8 lg:py-32">
       <div class="mx-auto max-w-2xl lg:grid lg:grid-cols-2 xl:grid-cols-1 xl:grid-rows-1 lg:mx-0 lg:max-w-none lg:gap-x-16 lg:gap-y-6 xl:gap-x-8">
-        <h1 class="max-w-2xl from-blue-400 to-blue-700 bg-gradient-to-r bg-clip-text pb-1 text-4xl font-bold text-transparent xl:col-auto lg:col-span-2 sm:text-6xl">
+        <h1 class="*headline max-w-2xl text-4xl xl:col-auto lg:col-span-2 sm:text-6xl">
           Hi, I'm Prabu Rangki.
         </h1>
 
@@ -32,7 +59,7 @@
         <NuxtImg
           src="/profile"
           provider="cloudinary"
-          class="mt-10 h-[320px] max-w-full rounded-2xl object-cover shadow-lg xl:(row-span-2 row-end-2 mt-36) lg:(ml-20 mt-0 max-w-none) sm:(mt-16 h-[400px])"
+          class="mt-10 h-[320px] max-w-full rounded-2xl object-cover shadow-lg xl:(row-span-2 row-end-2 mt-36) <sm:mx-auto lg:(ml-20 mt-0 max-w-none) sm:(mt-16 h-[400px])"
           loading="lazy"
           :modifiers="{
             flags: 'progressive',
@@ -44,9 +71,31 @@
 
   <section
     id="tools"
-    class="mt-10"
+    class="mt-10 container"
   >
-    TOols
+    <h2 class="*headline mt-24 text-center text-xl lg:text-3xl md:text-2xl">
+      My productive tools
+    </h2>
+
+    <div class="mx-auto mt-8 max-w-5xl flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
+      <a
+        v-for="icon in toolIcons"
+        :key="icon.link"
+        :href="icon.link"
+        class="group"
+      >
+        <i
+          :class="icon.class"
+          class="drop-shadow-icon group-hover-drop-shadow-icon_hover dark:drop-shadow-icon_dark dark:group-hover-drop-shadow-icon_dark_hover h-12 w-12 transition-filter md:(h-16 w-16)"
+        />
+      </a>
+    </div>
     <!--  -->
   </section>
+
+  <footer class="mt-8 py-8 md:mt-20">
+    <div class="flex justify-between container">
+      <span>&copy; {{ new Date().getFullYear() }} praburangki</span>
+    </div>
+  </footer>
 </template>

@@ -62,6 +62,9 @@ devDependencies:
   unocss:
     specifier: ^0.53.1
     version: 0.53.1(@unocss/webpack@0.53.1)(postcss@8.4.24)(vite@4.3.9)
+  unocss-transformer-alias:
+    specifier: ^0.0.6
+    version: 0.0.6
   vitest:
     specifier: ^0.32.2
     version: 0.32.2
@@ -1532,6 +1535,10 @@ packages:
     dependencies:
       '@unocss/core': 0.53.1
       unconfig: 0.3.9
+    dev: true
+
+  /@unocss/core@0.51.13:
+    resolution: {integrity: sha512-SclWkqY2c+p5+PiqrbQkhJNEExPdeo71/aGFye10tpBkgPJWd5xC7dhg5F8M4VPNBtuNCrvBWyqNnunMyuz/WQ==}
     dev: true
 
   /@unocss/core@0.53.1:
@@ -8218,6 +8225,12 @@ packages:
   /universalify@2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
+    dev: true
+
+  /unocss-transformer-alias@0.0.6:
+    resolution: {integrity: sha512-MTzgZ6J1FB8tZzCMyNQ1VK3pCQNzwlCQ9Y4ilblT/rCPTWZ6s3zOqMcQkWhETfxH6vWxoE+jMWJUgtpKuOOoVg==}
+    dependencies:
+      '@unocss/core': 0.51.13
     dev: true
 
   /unocss@0.53.1(@unocss/webpack@0.53.1)(postcss@8.4.24)(vite@4.3.9):

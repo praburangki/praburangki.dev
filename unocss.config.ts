@@ -5,6 +5,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss';
+import transformerAlias from 'unocss-transformer-alias';
 
 import { presetTypography } from './designs/preset-typography';
 import { elevationRule } from './designs/elevation';
@@ -41,22 +42,37 @@ export default defineConfig({
         invert: '#0f172a',
       },
     },
+
+    dropShadow: {
+      icon: '0 1px 2px rgba(0,0,0,0.5)',
+      icon_hover: '0 2px 4px rgba(0,0,0,0.5)',
+      icon_dark: '0 1px 2px rgba(255,255,255,0.3)',
+      icon_dark_hover: '0 1px 3px rgba(255,255,255,0.4)',
+    },
   },
 
   presets: [
-    presetUno(),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
       },
+      customizations: {
+        iconCustomizer(_collection, icon, props) {
+          if (icon === 'cypress-icon') {
+            props.stroke = '#ffffff';
+          }
+        },
+      },
     }),
     presetTypography(),
+    presetUno(),
   ],
 
   transformers: [
     transformerVariantGroup(),
     transformerDirectives(),
+    transformerAlias(),
   ],
 
   variants: [
@@ -78,4 +94,8 @@ export default defineConfig({
       },
     ],
   ],
+
+  shortcuts: {
+    headline: 'font-bold from-blue-400 to-blue-700 bg-gradient-to-r bg-clip-text pb-1 text-transparent',
+  },
 });
