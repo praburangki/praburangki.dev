@@ -20,6 +20,10 @@ const { isMenuOpen, toggleMenu } = useNav();
           <LayoutLogo class="h-5 w-auto" />
         </NuxtLink>
 
+        <ClientOnly>
+          <ToggleDarkBtn />
+        </ClientOnly>
+
         <LayoutHamburger
           class="ml-auto md:hidden"
           :active="isMenuOpen"

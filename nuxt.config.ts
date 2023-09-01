@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   },
 
   image: {
+    provider: 'cloudinary',
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/praburangki/image/upload/dev-site',
       modifiers: {
