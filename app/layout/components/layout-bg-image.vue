@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
   <div class="pointer-events-none absolute my-auto max-w-[1920px] w-full overflow-hidden md:-top-[90%]">
     <svg

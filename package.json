@@ -20,20 +20,21 @@
     "@nuxt/image": "1.0.0-rc.1",
     "@nuxtjs/color-mode": "^3.3.0",
     "@pinia/nuxt": "^0.4.11",
-    "@types/body-scroll-lock": "^3.1.0",
     "@types/node": "^18.15.3",
     "@unocss/eslint-config": "^0.55.4",
     "@unocss/nuxt": "^0.55.4",
     "@vinicunca/eslint-config": "^1.10.0",
-    "@vinicunca/js-utilities": "^3.3.2",
     "@vueuse/core": "^10.4.1",
-    "body-scroll-lock": "4.0.0-beta.0",
     "eslint": "^8.48.0",
     "eslint-define-config": "^1.23.0",
     "nuxt": "^3.7.0",
     "postcss-nested": "^6.0.1",
+    "rehype-anchor": "file:./markdown-plugins/rehype-anchor",
     "typescript": "^5.2.2",
     "unocss": "^0.55.4",
     "vitest": "^0.34.3"
+  },
+  "dependencies": {
+    "@vinicunca/perkakas": "^0.0.4"
   }
 }

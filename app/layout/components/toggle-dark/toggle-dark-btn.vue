@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import ToggleDarkBackdrop from './toggle-dark-backdrop.vue';
+import ToggleDarkStars from './toggle-dark-stars.vue';
+
 const colorMode = useColorMode();
 
 const toggleRef = ref<HTMLElement>();
@@ -80,12 +83,12 @@ function toggleColorMode() {
         class="toggle__indicator-wrapper absolute inset-0 duration-500 ease-$slide-ease transition-property-[translate]"
       >
         <span class="grid aspect-ratio-1 h-full place-items-center rounded-0 p-[3%]">
-          <span class="toggle__star relative aspect-ratio-1 h-full rounded-half duration-500 ease-$slide-ease transition-property-[translate] after:(absolute inset-0 block rounded-half blur-4 content-empty -z-1) before:(absolute left-[50%] top-[50%] aspect-ratio-1 rounded-half duration-500 ease-$slide-ease transition-property-[translate] content-empty -z-1)">
-            <span class="sun absolute inset-0 overflow-hidden rounded-half">
-              <span class="moon absolute inset-[-1%] rounded-half duration-500 ease-in-out transition-property-[translate]">
-                <span class="moon__crater absolute aspect-ratio-1 rounded-half" />
-                <span class="moon__crater absolute aspect-ratio-1 rounded-half" />
-                <span class="moon__crater absolute aspect-ratio-1 rounded-half" />
+          <span class="toggle__star relative aspect-ratio-1 h-full rounded-1/2 duration-500 ease-$slide-ease transition-property-[translate] after:(absolute inset-0 block rounded-1/2 blur-4 content-empty -z-1) before:(absolute left-[50%] top-[50%] aspect-ratio-1 rounded-1/2 duration-500 ease-$slide-ease transition-property-[translate] content-empty -z-1)">
+            <span class="sun absolute inset-0 overflow-hidden rounded-1/2">
+              <span class="moon absolute inset-[-1%] rounded-1/2 duration-500 ease-in-out transition-property-[translate]">
+                <span class="moon__crater absolute aspect-ratio-1 rounded-1/2" />
+                <span class="moon__crater absolute aspect-ratio-1 rounded-1/2" />
+                <span class="moon__crater absolute aspect-ratio-1 rounded-1/2" />
               </span>
             </span>
           </span>

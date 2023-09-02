@@ -1,7 +1,5 @@
 // @unocss-include
 export function defineHead() {
-  // const { page } = useContent();
-
   // TODO: maybe use this approach: https://content.nuxtjs.org/api/composables/use-content-head
   const page = ref<any>({});
 
@@ -20,7 +18,7 @@ export function defineHead() {
     },
 
     bodyAttrs: {
-      class: 'antialiased bg-surface dark:(bg-surface-invert text-white) overflow-x-hidden font-sans [--scroll-mt:9.875rem] lg:[--scroll-mt:4.75rem]',
+      class: 'antialiased font-sans w-full min-h-screen text-$pr-c-text-1 bg-$pr-c-bg',
     },
 
     meta: [

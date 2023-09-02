@@ -4,16 +4,17 @@ defineProps<{
 }>();
 
 defineEmits<{
-  (e: 'click'): void;
+  (event: 'click'): void;
 }>();
 </script>
 
 <template>
   <button
+    type="button"
+    class="group hamburger h-$pr-nav-height w-12 flex items-center justify-center md:hidden"
+    :class="{ active }"
     aria-label="mobile navigation"
     :aria-expanded="active"
-    class="group hamburger text-surface-invert dark:text-surface h-$nav-height flex items-center justify-center pa-2"
-    :class="{ active }"
     @click="$emit('click')"
   >
     <span class="relative h-[14px] w-4 overflow-hidden">

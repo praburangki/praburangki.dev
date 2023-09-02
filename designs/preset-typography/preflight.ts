@@ -1,5 +1,3 @@
-import { mergeDeep } from '@vinicunca/js-utilities';
-
 import { DEFAULT } from './default';
 
 export function getPreflights(
@@ -13,7 +11,7 @@ export function getPreflights(
   const escapedSelector = Array.from(escapedSelectors);
 
   if (cssExtend) {
-    return getCSS({ escapedSelector, selectorName, preflights: mergeDeep(DEFAULT, cssExtend) });
+    return getCSS({ escapedSelector, selectorName, preflights: structuredClone(DEFAULT, cssExtend) });
   }
 
   return getCSS({ escapedSelector, selectorName, preflights: DEFAULT });
@@ -28,6 +26,7 @@ export function getCSS(options: {
 
   let css = '';
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const selector in preflights) {
     // @ts-expect-error preflights do not have definitive keys
     const cssDeclarationBlock = preflights[selector];
@@ -67,6 +66,7 @@ export function getCSS(options: {
 
     css += '{';
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const k in cssDeclarationBlock) {
       const v = cssDeclarationBlock[k];
       css += `${k}:${v};`;

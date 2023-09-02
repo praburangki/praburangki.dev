@@ -1,6 +1,6 @@
 import { type Theme } from '@unocss/preset-mini';
 import { type CSSObject, type Preset, toEscapedSelector } from '@unocss/core';
-import { isUnset } from '@vinicunca/js-utilities';
+import { isNil } from '@vinicunca/perkakas';
 
 import { getPreflights } from './preflight';
 
@@ -49,7 +49,7 @@ export function presetTypography(options?: TypographyOptions): Preset<Theme> {
         colorsRE,
         ([, color], { theme }) => {
           const baseColor = theme.colors?.[color] as Record<string, string> | string;
-          if (isUnset(baseColor)) {
+          if (isNil(baseColor)) {
             return;
           }
 

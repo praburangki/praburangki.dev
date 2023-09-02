@@ -1,43 +1,48 @@
 export default defineNuxtConfig({
-  components: {
-    dirs: [
-      {
-        path: '~/app/layout/components',
-        extensions: ['.vue'],
-        prefix: 'layout',
-      },
-      {
-        path: '~/app/site/components',
-        extensions: ['.vue'],
-        prefix: 'site',
-      },
-      {
-        path: '~/app/toggle-dark/components',
-        extensions: ['.vue'],
-        prefix: 'toggle-dark',
-      },
-    ],
-  },
-
   devServer: {
     port: 3001,
   },
 
-  css: [
-    '@unocss/reset/tailwind.css',
-    '~~/designs/index.css',
-  ],
-
   modules: [
-    '@pinia/nuxt',
+    // https://github.com/nuxt/devtools
+    '@nuxt/devtools',
+    '@nuxtjs/color-mode',
     '@nuxt/content',
     '@unocss/nuxt',
+    '@pinia/nuxt',
     '@nuxt/image',
-    '@nuxtjs/color-mode',
+  ],
+
+  css: [
+    '@unocss/reset/tailwind.css',
+    '~~/designs/styles/index.css',
   ],
 
   colorMode: {
     classSuffix: '',
+    dataValue: 'theme',
+  },
+
+  content: {
+    highlight: {
+      theme: 'one-dark-pro',
+    },
+
+    navigation: {
+      fields: ['icon', 'titleTemplate', 'header', 'main', 'aside', 'footer'],
+    },
+
+    markdown: {
+      anchorLinks: false,
+
+      rehypePlugins: [
+        'rehype-anchor',
+      ],
+
+      toc: {
+        depth: 1,
+      },
+    },
   },
 
   image: {
@@ -55,9 +60,5 @@ export default defineNuxtConfig({
     plugins: {
       'postcss-nested': {},
     },
-  },
-
-  typescript: {
-    shim: false,
   },
 });

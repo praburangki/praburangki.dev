@@ -7,7 +7,6 @@ import {
 } from 'unocss';
 
 import { presetTypography } from './designs/preset-typography';
-import { elevationRule } from './designs/elevation';
 
 export default defineConfig({
   extendTheme: (theme: any) => {
@@ -104,7 +103,6 @@ export default defineConfig({
   ],
 
   rules: [
-    elevationRule,
     [
       'toggle-dark-backdrop',
       {

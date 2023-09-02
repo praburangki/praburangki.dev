@@ -40,9 +40,9 @@ const navLinks = [
     <nav
       v-if="isMenuOpen"
       ref="drawer"
-      class="drawer dark:bg-surface-invert bg-surface [-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 right-0 top-14 z-20 w-[300px]"
+      class="drawer [-webkit-overflow-scrolling:touch] pointer-events-auto fixed bottom-0 right-0 top-14 z-20 w-[300px] bg-surface dark:bg-surface-invert"
     >
-      <div class="text-surface-invert h-full flex flex-col px-4 py-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
+      <div class="h-full flex flex-col px-4 py-6 text-base font-semibold text-slate-900 text-surface-invert dark:bg-slate-800 dark:text-slate-400">
         <ul class="space-y-6">
           <li
             v-for="navLink in navLinks"

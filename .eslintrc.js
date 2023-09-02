@@ -5,4 +5,8 @@ module.exports = defineConfig({
     '@vinicunca/eslint-config',
     '@unocss',
   ],
+
+  rules: {
+    'sonarjs/cognitive-complexity': 'off',
+  },
 });

@@ -92,7 +92,5 @@ const toolIcons = [
     </div>
   </section>
 
-  <SiteHomeWorks />
-
-  <LayoutFooter />
+  <!-- <SiteHomeWorks /> -->
 </template>
