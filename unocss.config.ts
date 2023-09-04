@@ -47,6 +47,23 @@ export default defineConfig({
       icon_dark: '0 1px 2px rgba(255,255,255,0.3)',
       icon_dark_hover: '0 1px 3px rgba(255,255,255,0.4)',
     },
+
+    animation: {
+      keyframes: {
+        'collapsible-slide-down': '{from {height: 0} to {height: var(--radix-collapsible-content-height)}}',
+        'collapsible-slide-up': '{from {height: var(--radix-collapsible-content-height)} to {height: 0}}',
+      },
+
+      durations: {
+        'collapsible-slide-down': '0.3s',
+        'collapsible-slide-up': '0.3s',
+      },
+
+      timingFns: {
+        'collapsible-slide-down': 'ease-out',
+        'collapsible-slide-up': 'ease-out',
+      },
+    },
   },
 
   presets: [

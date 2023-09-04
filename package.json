@@ -35,6 +35,7 @@
     "vitest": "^0.34.3"
   },
   "dependencies": {
-    "@vinicunca/perkakas": "^0.0.4"
+    "@vinicunca/perkakas": "^0.0.4",
+    "radix-vue": "^0.1.29"
   }
 }
