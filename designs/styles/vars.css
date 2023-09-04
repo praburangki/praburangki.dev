@@ -1,4 +1,88 @@
 /**
+ * Colors: Palette
+ *
+ * The primitive colors used for accent colors. These colors are referenced
+ * by functional colors such as "Text", "Background", or "Brand".
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ * 
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *    It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *    top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *    or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *    on top of it.
+ *
+ *    The soft color must be semi transparent alpha channel. This is crucial
+ *    because it allows adding multiple "soft" colors on top of each other
+ *    to create a accent, such as when having inline code block inside
+ *    custom containers.
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --pr-c-gray-1: #dddde3;
+  --pr-c-gray-2: #e4e4e9;
+  --pr-c-gray-3: #ebebef;
+  --pr-c-gray-soft: rgba(142, 150, 170, 0.14);
+
+  --pr-c-indigo-1: #3451b2;
+  --pr-c-indigo-2: #3a5ccc;
+  --pr-c-indigo-3: #5672cd;
+  --pr-c-indigo-soft: rgba(100, 108, 255, 0.14);
+
+  --pr-c-green-1: #18794e;
+  --pr-c-green-2: #299764;
+  --pr-c-green-3: #30a46c;
+  --pr-c-green-soft: rgba(16, 185, 129, 0.14);
+
+  --pr-c-yellow-1: #915930;
+  --pr-c-yellow-2: #946300;
+  --pr-c-yellow-3: #9f6a00;
+  --pr-c-yellow-soft: rgba(234, 179, 8, 0.14);
+
+  --pr-c-red-1: #b8272c;
+  --pr-c-red-2: #d5393e;
+  --pr-c-red-3: #e0575b;
+  --pr-c-red-soft: rgba(244, 63, 94, 0.14);
+
+  --pr-c-sponsor: #db2777;
+}
+
+.dark {
+  --pr-c-gray-1: #515c67;
+  --pr-c-gray-2: #414853;
+  --pr-c-gray-3: #32363f;
+  --pr-c-gray-soft: rgba(101, 117, 133, 0.16);
+
+  --pr-c-indigo-1: #a8b1ff;
+  --pr-c-indigo-2: #5c73e7;
+  --pr-c-indigo-3: #3e63dd;
+  --pr-c-indigo-soft: rgba(100, 108, 255, 0.16);
+
+  --pr-c-green-1: #3dd68c;
+  --pr-c-green-2: #30a46c;
+  --pr-c-green-3: #298459;
+  --pr-c-green-soft: rgba(16, 185, 129, 0.16);
+
+  --pr-c-yellow-1: #f9b44e;
+  --pr-c-yellow-2: #da8b17;
+  --pr-c-yellow-3: #a46a0a;
+  --pr-c-yellow-soft: rgba(234, 179, 8, 0.16);
+
+  --pr-c-red-1: #f66f81;
+  --pr-c-red-2: #f14158;
+  --pr-c-red-3: #b62a3c;
+  --pr-c-red-soft: rgba(244, 63, 94, 0.16);
+}
+
+/**
  * Colors: Background
  *
  * - `bg`: The bg color used for main screen.
@@ -48,6 +132,58 @@
   --pr-c-text-2: rgba(235, 235, 245, 0.6);
   --pr-c-text-3: rgba(235, 235, 245, 0.38);
 }
+
+/**
+ * Colors: Function
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attched to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ *
+ * To understand the scaling system, refer to "Colors: Palette" section.
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --pr-c-default-1: var(--pr-c-gray-1);
+  --pr-c-default-2: var(--pr-c-gray-2);
+  --pr-c-default-3: var(--pr-c-gray-3);
+  --pr-c-default-soft: var(--pr-c-gray-soft);
+
+  --pr-c-brand-1: var(--pr-c-indigo-1);
+  --pr-c-brand-2: var(--pr-c-indigo-2);
+  --pr-c-brand-3: var(--pr-c-indigo-3);
+  --pr-c-brand-soft: var(--pr-c-indigo-soft);
+
+  /* DEPRECATED: Use `--pr-c-brand-1` instead. */
+  --pr-c-brand: var(--pr-c-brand-1);
+
+  --pr-c-tip-1: var(--pr-c-brand-1);
+  --pr-c-tip-2: var(--pr-c-brand-2);
+  --pr-c-tip-3: var(--pr-c-brand-3);
+  --pr-c-tip-soft: var(--pr-c-brand-soft);
+
+  --pr-c-warning-1: var(--pr-c-yellow-1);
+  --pr-c-warning-2: var(--pr-c-yellow-2);
+  --pr-c-warning-3: var(--pr-c-yellow-3);
+  --pr-c-warning-soft: var(--pr-c-yellow-soft);
+
+  --pr-c-danger-1: var(--pr-c-red-1);
+  --pr-c-danger-2: var(--pr-c-red-2);
+  --pr-c-danger-3: var(--pr-c-red-3);
+  --pr-c-danger-soft: var(--pr-c-red-soft);
+}
+
 
 /**
  * Colors: Borders

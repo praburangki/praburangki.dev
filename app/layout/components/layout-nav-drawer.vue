@@ -2,6 +2,7 @@
 import { isBrowser } from '@vinicunca/perkakas';
 import { useScrollLock } from '@vueuse/core';
 
+import LayoutNavDrawerMenu from './layout-nav-drawer-menu.vue';
 import ToggleDarkBtn from './toggle-dark/toggle-dark-btn.vue';
 
 defineProps<{
@@ -27,6 +28,8 @@ const isLocked = useScrollLock(isBrowser ? document.body : null);
       class="fixed bottom-0 left-0 right-0 top-[calc(var(--pr-nav-height)+1px)] w-full overflow-y-auto bg-$pr-c-bg px-8 md:hidden"
     >
       <div class="mx-auto max-w-[288px] pb-24 pt-6">
+        <LayoutNavDrawerMenu />
+
         <div class="flex justify-center">
           <ClientOnly>
             <ToggleDarkBtn class="mt-6" />

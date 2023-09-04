@@ -9,11 +9,11 @@ import LayoutHeader from '~~/app/layout/components/layout-header.vue';
     <div
       class="mx-auto w-full shrink-0 grow-1"
     >
-      <LayoutBgImage />
+      <!-- <LayoutBgImage /> -->
 
       <slot />
 
-      <LayoutFooter />
+      <!-- <LayoutFooter /> -->
     </div>
   </div>
 </template>

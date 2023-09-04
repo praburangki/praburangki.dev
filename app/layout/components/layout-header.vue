@@ -3,9 +3,7 @@ import LayoutNavbar from './layout-navbar.vue';
 import LayoutNavDrawer from './layout-nav-drawer.vue';
 import { useNav } from '../composables/use-nav';
 
-const { isDrawerOpen, closeDrawer, toggleDrawer } = useNav();
-
-provide('closeDrawer', closeDrawer);
+const { isDrawerOpen, toggleDrawer } = useNav();
 </script>
 
 <template>

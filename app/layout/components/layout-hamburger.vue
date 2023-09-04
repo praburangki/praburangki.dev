@@ -19,23 +19,23 @@ defineEmits<{
   >
     <span class="relative h-[14px] w-4 overflow-hidden">
       <span
-        class="top absolute left-0 top-0 h-[2px] w-4 translate-x-0 bg-current"
+        class="top absolute left-0 top-0 h-[2px] w-4 translate-x-0"
         :class="{
-          'vin:(top-[6px] [--un-translate-x:0] rotate-225) group-hover:bg-opacity-70': active,
+          'vin:(top-[6px] [--un-translate-x:0] rotate-225)': active,
           'group-hover:translate-x-1': !active,
         }"
       />
       <span
-        class="middle absolute left-0 top-[6px] h-[2px] w-4 translate-x-2 bg-current"
+        class="middle absolute left-0 top-[6px] h-[2px] w-4 translate-x-2"
         :class="{
-          'vin:(top-[6px] translate-x-4) group-hover:bg-opacity-70': active,
+          'vin:(top-[6px] translate-x-4)': active,
           'group-hover:translate-x-0': !active,
         }"
       />
       <span
-        class="bottom absolute left-0 top-3 h-[2px] w-4 translate-x-1 bg-current"
+        class="bottom absolute left-0 top-3 h-[2px] w-4 translate-x-1"
         :class="{
-          'vin:([--un-translate-x:0px] top-[6px]) rotate-135 group-hover:bg-opacity-70': active,
+          'vin:([--un-translate-x:0px] top-[6px]) rotate-135': active,
           'group-hover:translate-x-2': !active,
         }"
       />
@@ -47,6 +47,13 @@ defineEmits<{
   .hamburger {
     .top, .middle, .bottom {
       transition: top .25s, background-color .5s, transform .25s;
+      @apply bg-$pr-c-text-1;
+    }
+
+    &.active:hover {
+      .top, .middle, .bottom {
+        @apply bg-$pr-c-text-2;
+      }
     }
   }
 </style>
