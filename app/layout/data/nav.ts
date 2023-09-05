@@ -26,7 +26,7 @@ export const navItems: NavItem[] = [
       },
       {
         text: 'Standup Comedy',
-        link: '/portfolios/standups',
+        link: '/portfolios/standup-comedy',
       },
     ],
   },

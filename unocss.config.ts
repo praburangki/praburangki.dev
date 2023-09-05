@@ -41,6 +41,14 @@ export default defineConfig({
       },
     },
 
+    boxShadow: {
+      1: '0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+      2: '0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07)',
+      3: '0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08)',
+      4: '0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12)',
+      5: '0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16)',
+    },
+
     dropShadow: {
       icon: '0 1px 2px rgba(0,0,0,0.5)',
       icon_hover: '0 2px 4px rgba(0,0,0,0.5)',
@@ -52,16 +60,40 @@ export default defineConfig({
       keyframes: {
         'collapsible-slide-down': '{from {height: 0} to {height: var(--radix-collapsible-content-height)}}',
         'collapsible-slide-up': '{from {height: var(--radix-collapsible-content-height)} to {height: 0}}',
+        'enter-from-right': '{from{opacity:0;transform:translateX(200px)}to{opacity:1;transform:translateX(0)}}',
+        'enter-from-left': '{from{opacity:0;transform:translateX(-200px)}to{opacity:1;transform:translateX(0)}}',
+        'exit-to-right': '{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(200px)}}',
+        'exit-to-left': '{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-200px)}}',
+        'scale-in': '{from{opacity:0;transform:rotateX(-10deg) scale(0.9)}to{opacity:1;transform:rotateX(0deg) scale(1)}}',
+        'scale-out': '{from{opacity:1;transform:rotateX(0deg) scale(1)}to{opacity:0;transform:rotateX(-10deg) scale(0.95)}}',
+        'fade-in': '{from{opacity:0}to{opacity:1}}',
+        'fade-out': '{from{opacity:1}to{opacity:0}}',
       },
 
       durations: {
         'collapsible-slide-down': '0.3s',
         'collapsible-slide-up': '0.3s',
+        'scale-in': '0.2s',
+        'scale-out': '0.2s',
+        'fade-in': '0.2s',
+        'fade-out': '0.2s',
+        'enter-from-left': '0.25s',
+        'enter-from-right': '0.25s',
+        'exit-to-left': '0.25s',
+        'exit-to-right': '0.25s',
       },
 
       timingFns: {
         'collapsible-slide-down': 'ease-out',
         'collapsible-slide-up': 'ease-out',
+        'scale-in': 'ease',
+        'scale-out': 'ease',
+        'fade-in': 'ease',
+        'fade-out': 'ease',
+        'enter-from-left': 'ease',
+        'enter-from-right': 'ease',
+        'exit-to-left': 'ease',
+        'exit-to-right': 'ease',
       },
     },
   },

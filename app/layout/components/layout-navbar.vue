@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import LayoutLogo from './layout-logo.vue';
 import LayoutHamburger from './layout-hamburger.vue';
+import LayoutNavbarMenu from './layout-navbar-menu.vue';
 
 defineProps<{
   isDrawerOpen: boolean;
@@ -30,12 +31,10 @@ defineEmits<{
       </div>
 
       <!-- Content -->
-      <div
-        class="grow-1"
-      >
-        <div
-          class="h-$pr-nav-height flex items-center justify-end grid-gap-x-2"
-        >
+      <div class="grow-1">
+        <div class="h-$pr-nav-height flex items-center justify-end grid-gap-x-2">
+          <LayoutNavbarMenu />
+
           <LayoutHamburger
             :active="isDrawerOpen"
             @click="$emit('toggleDrawer')"

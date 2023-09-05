@@ -120,7 +120,7 @@ function toggleColorMode() {
 .btn-toggle {
   --slide-ease: cubic-bezier(.4,-0.3,.6,1.3);
   --speed: 0.5s;
-  --width: 100px;
+  --width: 64px;
 
   &[aria-pressed=true] {
     --dark: 1;
