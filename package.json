@@ -7,35 +7,34 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "clean": "nuxt clean",
+    "clean": "nuxt cleanup",
     "preview": "nuxt preview",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "nuxt prepare",
     "test": "vitest"
   },
+  "dependencies": {
+    "@vinicunca/perkakas": "^0.0.4",
+    "radix-vue": "^0.1.30"
+  },
   "devDependencies": {
     "@iconify/json": "^2.2.109",
-    "@nuxt/content": "^2.8.1",
+    "@nuxt/content": "^2.8.2",
     "@nuxt/devtools": "^0.8.2",
     "@nuxt/image": "1.0.0-rc.1",
     "@nuxtjs/color-mode": "^3.3.0",
     "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18.15.3",
-    "@unocss/eslint-config": "^0.55.4",
-    "@unocss/nuxt": "^0.55.4",
+    "@unocss/eslint-config": "^0.55.7",
+    "@unocss/nuxt": "^0.55.7",
     "@vinicunca/eslint-config": "^1.10.0",
     "@vueuse/core": "^10.4.1",
     "eslint": "^8.48.0",
     "eslint-define-config": "^1.23.0",
     "nuxt": "^3.7.0",
     "postcss-nested": "^6.0.1",
-    "rehype-anchor": "file:./markdown-plugins/rehype-anchor",
     "typescript": "^5.2.2",
-    "unocss": "^0.55.4",
+    "unocss": "^0.55.7",
     "vitest": "^0.34.3"
-  },
-  "dependencies": {
-    "@vinicunca/perkakas": "^0.0.4",
-    "radix-vue": "^0.1.29"
   }
 }

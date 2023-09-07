@@ -1,3 +1,7 @@
+import { createResolver } from '@nuxt/kit';
+
+const { resolve } = createResolver(import.meta.url);
+
 export default defineNuxtConfig({
   devServer: {
     port: 3001,
@@ -11,11 +15,13 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxt/image',
+    resolve('./app/content-post-process'),
   ],
 
   css: [
     '@unocss/reset/tailwind.css',
     '~~/designs/styles/index.css',
+    '~~/designs/styles/docs.css',
   ],
 
   colorMode: {
@@ -24,20 +30,16 @@ export default defineNuxtConfig({
   },
 
   content: {
+    documentDriven: {
+      injectPage: false,
+    },
+
     highlight: {
       theme: 'one-dark-pro',
     },
 
-    navigation: {
-      fields: ['icon', 'titleTemplate', 'header', 'main', 'aside', 'footer'],
-    },
-
     markdown: {
       anchorLinks: false,
-
-      rehypePlugins: [
-        'rehype-anchor',
-      ],
 
       toc: {
         depth: 1,

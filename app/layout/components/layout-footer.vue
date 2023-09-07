@@ -19,7 +19,7 @@ const socialIcons = [
 </script>
 
 <template>
-  <footer class="mt-8 py-8 md:mt-200">
+  <footer class="mt-8 py-8">
     <div class="container">
       <div class="flex items-center justify-between border-t-1 border-slate-200 pt-5 dark:border-slate-700">
         <span>&copy; {{ new Date().getFullYear() }} praburangki</span>

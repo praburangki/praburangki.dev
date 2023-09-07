@@ -7,7 +7,7 @@ const { isDrawerOpen, toggleDrawer } = useNav();
 </script>
 
 <template>
-  <header class="sticky top-0 z-30 w-full border-b border-$pr-c-gutter">
+  <header class="sticky top-0 z-30 w-full border-b border-$pr-c-gutter bg-$pr-c-bg">
     <LayoutNavbar
       :is-drawer-open="isDrawerOpen"
       @toggle-drawer="toggleDrawer"

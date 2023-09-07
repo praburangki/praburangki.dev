@@ -1,37 +1,23 @@
+import { mergeDeep } from '@unocss/core';
+
 import { DEFAULT } from './default';
 
-export function getPreflights(
+function getCSS(
   options: {
-    escapedSelectors: Set<string>;
+    escapedSelector: string[];
     selectorName: string;
-    cssExtend?: object;
+    preflights: object;
   },
 ): string {
-  const { escapedSelectors, selectorName, cssExtend } = options;
-  const escapedSelector = Array.from(escapedSelectors);
-
-  if (cssExtend) {
-    return getCSS({ escapedSelector, selectorName, preflights: structuredClone(DEFAULT, cssExtend) });
-  }
-
-  return getCSS({ escapedSelector, selectorName, preflights: DEFAULT });
-}
-
-export function getCSS(options: {
-  escapedSelector: string[];
-  selectorName: string;
-  preflights: object;
-}) {
-  const { escapedSelector, selectorName, preflights } = options;
-
   let css = '';
+
+  const { escapedSelector, selectorName, preflights } = options;
 
   // eslint-disable-next-line no-restricted-syntax
   for (const selector in preflights) {
     // @ts-expect-error preflights do not have definitive keys
     const cssDeclarationBlock = preflights[selector];
-    const notProseSelector = `:not(:where(.not-${selectorName},
-      .not-${selectorName} *))`;
+    const notProseSelector = `:not(:where(.not-${selectorName},.not-${selectorName} *))`;
 
     // since pseudo class & elements can't be matched
     // within single :where(), they are split and rejoined.
@@ -74,7 +60,27 @@ export function getCSS(options: {
 
     css += '}';
   }
-
   return css;
 }
 
+export function getPreflights(
+  options: {
+    escapedSelectors: Set<string>;
+    selectorName: string;
+    cssExtend?: object | undefined;
+  },
+): string {
+  const { escapedSelectors, selectorName, cssExtend } = options;
+  let escapedSelector = Array.from(escapedSelectors);
+
+  // attribute mode -> add class selector with `:is()` pseudo-class function
+  if (!escapedSelector[escapedSelector.length - 1].startsWith('.')) {
+    escapedSelector = [`:is(${escapedSelector[escapedSelector.length - 1]},.${selectorName})`];
+  }
+
+  if (cssExtend) {
+    return getCSS({ escapedSelector, selectorName, preflights: mergeDeep(DEFAULT, cssExtend) });
+  }
+
+  return getCSS({ escapedSelector, selectorName, preflights: DEFAULT });
+}

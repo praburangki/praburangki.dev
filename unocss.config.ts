@@ -26,12 +26,12 @@ export default defineConfig({
       },
     },
 
-    maxWidth: {
-      '8xl': '90rem',
-    },
-
-    borderRadius: {
-      half: '50%',
+    breakpoints: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '960px',
+      'xl': '1280px',
+      '2xl': '1440px',
     },
 
     colors: {

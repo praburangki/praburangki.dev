@@ -224,3 +224,56 @@
 :root {
   --pr-layout-max-w: 1440px;
 }
+
+/**
+ * Component: Header Anchor
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --pr-header-anchor-symbol: '#';
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --pr-code-line-height: 1.7;
+  --pr-code-font-size: 0.875em;
+  --pr-code-color: var(--pr-c-brand-1);
+  --pr-code-link-color: var(--pr-c-brand-1);
+  --pr-code-link-hover-color: var(--pr-c-brand-2);
+  --pr-code-bg: var(--pr-c-default-soft);
+
+  --pr-code-block-color: var(--pr-c-text-2);
+  --pr-code-block-bg: #292b30;
+  --pr-code-block-divider-color: var(--pr-c-gutter);
+
+  --pr-code-lang-color: var(--pr-c-text-3);
+
+  --pr-code-line-highlight-color: var(--pr-c-default-soft);
+  --pr-code-line-number-color: var(--pr-c-text-3);
+
+  --pr-code-line-diff-add-color: var(--pr-c-green-soft);
+  --pr-code-line-diff-add-symbol-color: var(--pr-c-green-1);
+
+  --pr-code-line-diff-remove-color: var(--pr-c-red-soft);
+  --pr-code-line-diff-remove-symbol-color: var(--pr-c-red-1);
+
+  --pr-code-line-warning-color: var(--pr-c-yellow-soft);
+  --pr-code-line-error-color: var(--pr-c-red-soft);
+
+  --pr-code-copy-code-border-color: var(--pr-c-divider);
+  --pr-code-copy-code-bg: var(--pr-c-bg-soft);
+  --pr-code-copy-code-hover-border-color: var(--pr-c-divider);
+  --pr-code-copy-code-hover-bg: var(--pr-c-bg);
+  --pr-code-copy-code-active-text: var(--pr-c-text-2);
+  --pr-code-copy-copied-text-content: 'Copied';
+
+  --pr-code-tab-divider: var(--pr-code-block-divider-color);
+  --pr-code-tab-text-color: var(--pr-c-text-2);
+  --pr-code-tab-bg: var(--pr-code-block-bg);
+  --pr-code-tab-hover-text-color: var(--pr-c-text-1);
+  --pr-code-tab-active-text-color: var(--pr-c-text-1);
+  --pr-code-tab-active-bar-color: var(--pr-c-brand-1);
+}
