@@ -8,5 +8,6 @@ module.exports = defineConfig({
 
   rules: {
     'sonarjs/cognitive-complexity': 'off',
+    'sonarjs/no-duplicate-string': 'off',
   },
 });

@@ -1,8 +1,4 @@
 .prose {
-  h1 {
-    background-color: red;
-  }
-
   h1:hover .header-anchor,
   h1 .header-anchor:focus,
   h2:hover .header-anchor,

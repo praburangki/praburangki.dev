@@ -68,6 +68,10 @@ export default defineConfig({
         'scale-out': '{from{opacity:1;transform:rotateX(0deg) scale(1)}to{opacity:0;transform:rotateX(-10deg) scale(0.95)}}',
         'fade-in': '{from{opacity:0}to{opacity:1}}',
         'fade-out': '{from{opacity:1}to{opacity:0}}',
+        'slide-down-and-fade': '{from {opacity: 0;transform:translateY(-2px)} to {opacity: 1;transform: translateY(0)}}',
+        'slide-left-and-fade': '{from {opacity: 0;transform:translateX(2px)} to {opacity: 1;transform: translateX(0)}}',
+        'slide-up-and-fade': '{from {opacity: 0;transform:translateY(2px)} to {opacity: 1;transform: translateY(0)}}',
+        'slide-right-and-fade': '{from {opacity: 0;transform:translateX(-2px)} to {opacity: 1;transform: translateX(0)}}',
       },
 
       durations: {
@@ -81,6 +85,10 @@ export default defineConfig({
         'enter-from-right': '0.25s',
         'exit-to-left': '0.25s',
         'exit-to-right': '0.25s',
+        'slide-down-and-fade': '0.4s',
+        'slide-left-and-fade': '0.4s',
+        'slide-up-and-fade': '0.4s',
+        'slide-right-and-fade': '0.4s',
       },
 
       timingFns: {
@@ -94,6 +102,10 @@ export default defineConfig({
         'enter-from-right': 'ease',
         'exit-to-left': 'ease',
         'exit-to-right': 'ease',
+        'slide-down-and-fade': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-left-and-fade': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-up-and-fade': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-right-and-fade': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },

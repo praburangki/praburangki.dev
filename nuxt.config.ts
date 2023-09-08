@@ -24,6 +24,20 @@ export default defineNuxtConfig({
     '~~/designs/styles/docs.css',
   ],
 
+  // components: [
+  //   {
+  //     prefix: '',
+  //     path: resolve('./components'),
+  //     global: true,
+  //   },
+  //   // We need this to be able to use the recursive component (ArticleAsideItem)
+  //   {
+  //     prefix: '',
+  //     path: resolve('./domains/articles/components'),
+  //     global: true,
+  //   },
+  // ],
+
   colorMode: {
     classSuffix: '',
     dataValue: 'theme',
@@ -42,7 +56,7 @@ export default defineNuxtConfig({
       anchorLinks: false,
 
       toc: {
-        depth: 1,
+        depth: 2,
       },
     },
   },
