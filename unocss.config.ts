@@ -22,7 +22,7 @@ export default defineConfig({
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: '24px',
       },
     },
 
@@ -32,13 +32,6 @@ export default defineConfig({
       'lg': '960px',
       'xl': '1280px',
       '2xl': '1440px',
-    },
-
-    colors: {
-      surface: {
-        DEFAULT: '#fcfcfc',
-        invert: '#020617',
-      },
     },
 
     boxShadow: {

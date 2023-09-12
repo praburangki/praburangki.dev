@@ -17,8 +17,8 @@ export const navItems: NavItem[] = [
     text: 'Portfolios',
     items: [
       {
-        text: 'Websites',
-        link: '/portfolios/websites',
+        text: 'Web Development',
+        link: '/portfolios/web-development',
       },
       {
         text: 'Talks',
@@ -31,7 +31,7 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    text: 'Playground',
-    link: '/playgrounds',
+    text: 'Projects',
+    link: '/projects',
   },
 ];

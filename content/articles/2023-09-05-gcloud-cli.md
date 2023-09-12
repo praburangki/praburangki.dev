@@ -74,6 +74,7 @@ When you open the Windows file explorer, it displays your devices and drives. We
 <img src="/images/file-explorer.jpg" alt="File explorer" width="800px" />
 </p>
 
+
 If you wanted to access your Windows files from the Linux terminal, they are found in the `/mnt/` directory, so your Windows user directory would be located at `/mnt/c/Users/username`.
 
 With your Ubuntu drive mapped, you can easily drag/drop or copy/paste Windows files to the Linux file system by using the file explorer.

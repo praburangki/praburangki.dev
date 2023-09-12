@@ -1,41 +1,5 @@
 <script lang="ts" setup>
-const toolIcons = [
-  {
-    name: 'Git',
-    class: 'i-simple-icons:git',
-    link: 'https://nuxt.com/',
-  },
-  {
-    name: 'JavaScript',
-    class: 'i-logos:javascript',
-    link: 'https://nuxt.com/',
-  },
-  {
-    name: 'Nuxt',
-    class: 'i-logos:nuxt-icon',
-    link: 'https://nuxt.com/',
-  },
-  {
-    name: 'Typescript',
-    class: 'i-logos:typescript-icon',
-    link: 'https://www.typescriptlang.org/',
-  },
-  {
-    name: 'UnoCSS',
-    class: 'i-vscode-icons:file-type-unocss',
-    link: 'https://unocss.dev/',
-  },
-  {
-    name: 'Figma',
-    class: 'i-logos:figma',
-    link: 'https://www.figma.com/',
-  },
-  {
-    name: 'Cypress',
-    class: 'i-vscode-icons:file-type-cypress',
-    link: 'https://www.cypress.io/',
-  },
-];
+import { TOOL_ICONS } from '~~/domains/core/data/tool-icons';
 </script>
 
 <template>
@@ -94,41 +58,28 @@ const toolIcons = [
       Tools that I've worked with
     </h2>
 
-    <div class="grid grid-flow-row grid-cols-[repeat(auto-fit,minmax(160px,1fr))] grid-rows-[auto] mx-auto mt-10 max-w-[1152px] gap-4">
-      <a
-        v-for="icon in toolIcons"
-        :key="icon.link"
-        :href="icon.link"
-        target="_blank"
-        class="group h-12 inline-flex items-center overflow-hidden border-2 border-$pr-c-divider rounded-3 bg-$pr-c-bg transition-all-280 hover:(scale-110 border-$pr-c-border)"
-        :title="icon.name"
-      >
-        <span class="inline-flex items-center bg-$pr-c-bg-alt p-2">
-          <i
-            :class="icon.class"
-            class="h-7 w-7"
-          />
-        </span>
+    <div class="mx-auto mt-10 max-w-[1152px]">
+      <div class="mt-4 flex flex-wrap gap-4">
+        <a
+          v-for="icon in TOOL_ICONS"
+          :key="icon.link"
+          :href="icon.link"
+          target="_blank"
+          class="grid grid-cols-[max-content_1fr] items-center overflow-hidden border-2 border-$pr-c-divider rounded-2 bg-$pr-c-bg transition-all-280 hover:(scale-110 border-$pr-c-border)"
+          :title="icon.name"
+        >
+          <span class="h-8 w-8 inline-flex items-center justify-center bg-$pr-c-bg-alt p-1.6 lg:(h-[2.8125rem] w-[2.8125rem] p-[0.3rem])">
+            <i
+              :class="icon.class"
+              class="h-5 w-5 lg:(h-6 w-6)"
+            />
+          </span>
 
-        <span class="grow-1 pr-4 text-right text-sm font-500 lg:text-lg md:text-lg">
-          {{ icon.name }}
-        </span>
-      </a>
-    </div>
-
-    <div class="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
-      <a
-        v-for="icon in toolIcons"
-        :key="icon.link"
-        :href="icon.link"
-        class="group"
-        :title="icon.name"
-      >
-        <i
-          :class="icon.class"
-          class="h-12 w-12 drop-shadow-icon transition-filter md:(h-16 w-16) dark:drop-shadow-icon_dark group-hover-drop-shadow-icon_hover dark:group-hover-drop-shadow-icon_dark_hover"
-        />
-      </a>
+          <span class="grow-1 px-2 text-sm font-600 lg:text-lg md:text-lg">
+            {{ icon.name }}
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 

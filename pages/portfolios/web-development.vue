@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <h1>Playground Page</h1>
+  <h1>Web Development Page</h1>
 </template>
